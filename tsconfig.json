@@ -26,13 +26,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "emitDeclarationOnly": true,
     "allowJs": true,
     "jsx": "react-jsx",
     "incremental": true,
     "esModuleInterop": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "out",
+    "outDir": ".",
     "baseUrl": ".",
     "paths": {
       "@/*": [

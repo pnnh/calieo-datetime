@@ -1,6 +1,6 @@
 import React from 'react'
 import * as stylex from '@stylexjs/stylex';
-import SecondCard from "@/app/second";
+import RootLayout from "@/app/layout";
 
 const styles = stylex.create({
     root: {
@@ -28,11 +28,12 @@ const colorStyles = stylex.create({
 });
 
 export default function AppIndex() {
-    return <div {...stylex.props(
-        styles.root,
-        colorStyles.red,
-    )}>
-        <div>Hello StyleX</div>
-        <SecondCard/>
-    </div>
+    return <RootLayout>
+        <div {...stylex.props(
+            styles.root,
+            colorStyles.red,
+        )}>
+            <div>Hello StyleX</div>
+        </div>
+    </RootLayout>
 }

@@ -28,3 +28,4 @@ coverage/
 .swc/
 .rollup.cache/
 out/
+dist/

@@ -1,36 +1,47 @@
-import commonjs from '@rollup/plugin-commonjs'
 import {nodeResolve} from '@rollup/plugin-node-resolve'
 import strip from '@rollup/plugin-strip'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import terser from '@rollup/plugin-terser'
-import preserveDirectives from 'rollup-preserve-directives'
 import replace from '@rollup/plugin-replace';
 import stylexPlugin from '@stylexjs/rollup-plugin';
 import copy from "rollup-plugin-copy";
+import commonjs from '@rollup/plugin-commonjs'
+import path from 'path'
+import {fileURLToPath} from 'url';
+import alias from "@rollup/plugin-alias";
+import preserveDirectives from 'rollup-preserve-directives'
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 
 export default {
     input: 'src/index.tsx',
     output: {
-        file: 'dist/index.mjs',
-        format: 'esm',
+        file: 'dist/index.js',
+        format: 'iife',
         sourcemap: true,
         assetFileNames: '[name][extname]'
     },
     external: [],
     plugins: [
-        commonjs(),
-        nodeResolve({
-            extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            moduleDirectories: ['node_modules', 'src'],
-            preferBuiltins: false
-        }),
-        json(),
         typescript({
             tsconfig: 'tsconfig.json',
             sourceMap: true,
             outputToFilesystem: true,
         }),
+        nodeResolve({
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            moduleDirectories: ['node_modules', 'src'],
+            preferBuiltins: false
+        }),
+        commonjs(),
+        alias({
+            entries: [
+                {find: '@', replacement: path.resolve(__dirname, 'src')},
+            ]
+        }),
+        json(),
         copy({
             targets: [
                 {src: 'public/*', dest: 'dist'},
@@ -45,9 +56,6 @@ export default {
         stylexPlugin({
             fileName: 'index.css',
             classNamePrefix: 'ca-',
-            importSources: [
-                {from: 'react-strict-dom', as: 'css '}
-            ]
         }),
         preserveDirectives(),
         strip({
