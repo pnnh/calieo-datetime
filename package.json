@@ -2,9 +2,10 @@
   "name": "polaris-cloud",
   "version": "0.1.0",
   "scripts": {
-    "dev": "NODE_ENV=development tsx src/server.ts",
     "build": "rollup --config rollup.config.mjs",
-    "babel": "babel src -d lib --extensions .ts,.tsx,.js,.jsx,.cjs,.mjs"
+    "watch": "NODE_ENV=development rollup --config rollup.config.mjs --watch",
+    "dev": "NODE_ENV=development tsx src/server.ts",
+    "start": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",

@@ -9,17 +9,11 @@ body {
     padding: 0;
     background: #f7f7f7;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
     color: #4a4a4a;
     font-family: Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, sans-serif;
     font-size: 1em;
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
-}
-
-@media (min-width: 80em) {
-    html,
-    body {
-        font-size: 1.1em;
-    }
 }

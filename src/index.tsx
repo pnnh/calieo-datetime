@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import {RecoilRoot} from "recoil";
 import AppIndex from "@/app/page";
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import theme from "@/app/theme";
+import {StrictMode} from "react";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +29,12 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(
-    <RecoilRoot>
-        <RouterProvider router={router}/>
-    </RecoilRoot>
+    <ThemeProvider theme={theme}>
+        <CssBaseline/>
+        <RecoilRoot>
+            <StrictMode>
+                <RouterProvider router={router}/>
+            </StrictMode>
+        </RecoilRoot>
+    </ThemeProvider>
 );

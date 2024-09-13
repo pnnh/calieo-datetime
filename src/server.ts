@@ -2,6 +2,7 @@ import express, {Request, Response, NextFunction} from "express";
 import http from "http";
 import cors from 'cors'
 import stripAnsi from "strip-ansi";
+import {isProd} from "@/server/config";
 
 function handleErrors(
     handlerFunc: (request: Request, response: Response) => Promise<Response<any, Record<string, any>> | undefined | void>) {
@@ -16,16 +17,10 @@ function handleErrors(
 }
 
 
-export async function accountInformation(request: Request, response: Response) {
-    console.log("accountInformation")
-    return response.json({code: 200})
-}
-
-
 function runMain() {
 
     const server = express();
-    const workerPort = 8004
+    const workerPort = 8005
 
     // 解决跨域问题
     server.use(cors({
@@ -34,8 +29,10 @@ function runMain() {
     }));
     server.use(express.json());
 
-    server.use(express.static('dist'))
-    server.get("/account/information", handleErrors(accountInformation));
+    server.use(express.static('dist', {
+        etag: isProd(),
+        maxAge: isProd() ? 30000 : 0,
+    }))
     server.use((err: Error, req: Request, res: Response, next: NextFunction) => {
         const message = stripAnsi(err.stack || err.message || 'Unknown error')
         res.status(500).send({
