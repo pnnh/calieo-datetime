@@ -289,8 +289,8 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>String date = new java.text.SimpleDateFormat("dd/MM/yyyy
-                HH:mm:ss").format(new java.util.Date(<u>Unix timestamp</u> * 1000))
+            )}><code>String date = new java.text.SimpleDateFormat("dd/MM/yyyy
+                HH:mm:ss").format(new java.util.Date(<u>Unix timestamp</u> * 1000))</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -302,8 +302,8 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}><span>先</span> var unixTimestamp = new Date(<u>Unix timestamp</u> *
-                1000) <span>然后</span> commonTime = unixTimestamp.toLocaleString()
+            )}><code><span>先</span> var unixTimestamp = new Date(<u>Unix timestamp</u> *
+                1000) <span>然后</span> commonTime = unixTimestamp.toLocaleString()</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -315,7 +315,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>date -d @<u>Unix timestamp</u></div>
+            )}><code>date -d @<u>Unix timestamp</u></code></div>
         </div>
         <div {...stylex.props(
             styles.tableRow,
@@ -326,7 +326,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>from_unixtime(<u>Unix timestamp</u>)
+            )}><code>from_unixtime(<u>Unix timestamp</u>)</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -338,8 +338,9 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}><span>先</span> my $time = <u>Unix timestamp</u> <span>然后</span> my
+            )}><code><span>先</span> my $time = <u>Unix timestamp</u> <span>然后</span> my
                 ($sec, $min, $hour, $day, $month, $year) = (localtime($time))[0,1,2,3,4,5,6]
+                </code>
             </div>
         </div>
         <div {...stylex.props(
@@ -351,7 +352,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>date('r', <u>Unix timestamp</u>)
+            )}><code>date('r', <u>Unix timestamp</u>)</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -363,8 +364,8 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>SELECT TIMESTAMP WITH TIME ZONE 'epoch' + <u>Unix timestamp</u>) *
-                INTERVAL '1 second';
+            )}><code>SELECT TIMESTAMP WITH TIME ZONE 'epoch' + <u>Unix timestamp</u>) *
+                INTERVAL '1 second';</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -376,8 +377,8 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}><span>先</span> import time <span>然后</span> time.gmtime(<u>Unix
-                timestamp</u>)
+            )}><code><span>先</span> import time <span>然后</span> time.gmtime(<u>Unix
+                timestamp</u>)</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -389,7 +390,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>Time.at(<u>Unix timestamp</u>)
+            )}><code>Time.at(<u>Unix timestamp</u>)</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -401,7 +402,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>DATEADD(s, <u>Unix timestamp</u>, '1970-01-01 00:00:00')
+            )}><code>DATEADD(s, <u>Unix timestamp</u>, '1970-01-01 00:00:00')</code>
             </div>
         </div>
         <div {...stylex.props(
@@ -413,7 +414,7 @@ function TimestampToDatetime() {
             </div>
             <div  {...stylex.props(
                 styles.tableCell,
-            )}>DateAdd("s", <u>Unix timestamp</u>, "01/01/1970 00:00:00")
+            )}><code>DateAdd("s", <u>Unix timestamp</u>, "01/01/1970 00:00:00")</code>
             </div>
         </div>
         <div {...stylex.props(
