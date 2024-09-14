@@ -11,6 +11,8 @@ import AppIndex from "@/app/page";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import theme from "@/app/theme";
 import {StrictMode} from "react";
+import './index.css'
+import 'virtual:stylex.css'
 
 const router = createBrowserRouter([
     {

@@ -2,10 +2,9 @@
   "name": "polaris-cloud",
   "version": "0.1.0",
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
-    "watch": "NODE_ENV=development rollup --config rollup.config.mjs --watch",
-    "dev": "NODE_ENV=development tsx src/server.ts",
-    "start": "NODE_ENV=production node dist/server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -90,6 +89,8 @@
     "tslib": "^2.7.0",
     "tsx": "^4.11.0",
     "typescript": "5.4.5",
+    "vite": "^5.4.5",
+    "vite-plugin-stylex-dev": "^0.8.0",
     "zx": "^8.1.5"
   }
 }
