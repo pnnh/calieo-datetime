@@ -1,0 +1,22 @@
+{
+  "datetime": {
+    "page": {
+      "title": "时间戳工具",
+      "description": "时间戳工具",
+      "currentTimestamp": "当前时间戳",
+      "currentDatetime": "当前时间"
+    },
+    "seo": {
+      "title": "时间戳工具",
+      "keywords": "时间戳工具",
+      "description": "时间戳工具"
+    }
+  },
+  "timestamp": {
+    "tab": {
+      "genTimestamp": "生成时间戳",
+      "timestampToDatetime": "时间戳转时间",
+      "datetimeToTimestamp": "时间转时间戳"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "datetime": {
+    "page": {
+      "title": "Timestamp Tool",
+      "description": "Timestamp Tool",
+      "currentTimestamp": "Current Timestamp",
+      "currentDatetime": "Current Datetime"
+    },
+    "seo": {
+      "title": "Timestamp Tool",
+      "keywords": "Timestamp Tool",
+      "description": "Timestamp Tool"
+    }
+  },
+  "timestamp": {
+    "tab": {
+      "genTimestamp": "Generate Timestamp",
+      "timestampToDatetime": "Timestamp to Datetime",
+      "datetimeToTimestamp": "Datetime to Timestamp"
+    }
+  }
+}
